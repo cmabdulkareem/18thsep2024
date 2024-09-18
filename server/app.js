@@ -13,8 +13,12 @@ const corsoptions = {
     allowedHeaders : "Content-Type, Authorization"
 }
 
-
+app.use(express.json())
 app.use(cors(corsoptions))
+
+app.post('/register', (req, res)=>{
+    return res.status(400).json("Data not received")
+})
 
 
 app.listen(PORT, ()=>{
